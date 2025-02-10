@@ -5,9 +5,10 @@ import { CommonModule } from '@angular/common';
 import { HEROES } from '../mock-heroes';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../hero.service';
+import { MessagesComponent } from '../messages/messages.component';
 
 @Component({
-  selector: 'heroes',
+  selector: 'app-heroes',
   standalone: true,
   imports: [FormsModule, CommonModule, HeroDetailComponent],
   templateUrl: './heroes.component.html',
