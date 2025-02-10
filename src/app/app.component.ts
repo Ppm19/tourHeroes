@@ -5,7 +5,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeroesComponent, HeroDetailComponent],
+  imports: [HeroesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
