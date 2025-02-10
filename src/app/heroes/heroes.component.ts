@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HEROES } from '../mock-heroes';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'heroes',
@@ -14,21 +15,27 @@ import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 })
 
 export class HeroesComponent implements OnInit {
-  heroes = HEROES;
+  heroes!: Hero[];
 
   hero: Hero = {
     id: 1,
     name: 'Windstorm'
   };
-  constructor() { }
+
+  constructor(private heroService: HeroService) {}
 
 
   ngOnInit() {
-    console.log('HeroesComponent inicializado.');
+    this.getHeroes();
   }
 
-  selectedHero?: Hero;
+  selectedHero!: Hero;
     onSelect(hero: Hero): void {
     this.selectedHero = hero;
+  }
+
+  getHeroes(): void {
+    this.heroService.getHeroes()
+        .subscribe(heroes => this.heroes = heroes);
   }
 }
