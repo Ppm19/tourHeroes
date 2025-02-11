@@ -4,13 +4,13 @@ import { RouterModule } from '@angular/router';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { HeroSearchComponent } from '../hero-search/hero-search.component';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: [ './dashboard.component.css' ],
   standalone: true,
-  imports: [CommonModule, RouterModule, HttpClientModule]
+  imports: [CommonModule, RouterModule, HttpClientModule, HeroSearchComponent]
 })
 
 export class DashboardComponent implements OnInit {
